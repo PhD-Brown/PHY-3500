@@ -93,10 +93,53 @@ jupyter lab
    - Complétez les sections ensemble
    - Assurez-vous que toutes les cellules s'exécutent sans erreur
 
-3. **Utilisation des modules Python**
-   - Placez vos fonctions réutilisables dans `src/`
+3. **Utilisation des modules Python (pour le développement)**
+   - Placez vos fonctions réutilisables dans `src/` pendant le développement
    - Importez-les dans vos notebooks : `sys.path.append('../src')`
    - Documentez vos fonctions avec des docstrings
+   - **IMPORTANT pour la remise:** Copiez toutes les fonctions nécessaires directement dans le notebook final (voir section "Instructions pour la remise" ci-dessous)
+
+## 📝 Instructions pour la remise
+
+**⚠️ EXIGENCES IMPORTANTES POUR LA REMISE ⚠️**
+
+Le travail doit être soumis sous la forme d'un **seul** cahier Jupyter (`.ipynb`) contenant **toutes les informations pertinentes**, incluant **tout le code Python utilisé**.
+
+### Critères de remise
+
+- ✅ **Tout le code Python doit apparaître directement dans le notebook remis**
+- ✅ Le cahier remis doit être **autoportant** (self-contained) avec l'ensemble du code Python visible à l'intérieur
+- ✅ Un seul fichier `.ipynb` doit être transmis
+- ✅ Le fichier doit être nommé selon le format : `TPn_nom1_nom2_nom3.ipynb`
+
+### ❌ Ce qui n'est PAS acceptable
+
+- ❌ Code uniquement présent dans des modules `.py` externes appelés depuis le notebook
+- ❌ Imports de modules personnalisés depuis `src/` sans inclure le code dans le notebook
+- ❌ Notebook qui dépend de fichiers `.py` externes pour fonctionner
+
+### 💡 Comment procéder
+
+1. **Pendant le développement :** Vous pouvez utiliser les modules dans `src/` pour organiser votre code
+2. **Avant la remise finale :** Copiez toutes les fonctions des modules `src/` directement dans des cellules de code du notebook
+3. **Vérification finale :** Assurez-vous que le notebook s'exécute complètement sans dépendre de fichiers externes (sauf les bibliothèques standard comme numpy, matplotlib, etc.)
+
+### Exemple
+
+**❌ Mauvais** (pour la remise finale) :
+```python
+import sys
+sys.path.append('../src')
+from utils import ma_fonction  # Code externe non visible
+```
+
+**✅ Bon** (pour la remise finale) :
+```python
+# Définition de ma_fonction directement dans le notebook
+def ma_fonction(x):
+    """Ma fonction utilitaire"""
+    return x * 2
+```
 
 ## 🔄 Workflow Git et collaboration
 
@@ -215,7 +258,9 @@ nbdiff-web notebook1.ipynb notebook2.ipynb
 
 ## 📋 Checklist avant de remettre un TP
 
-- [ ] Le notebook est renommé avec les noms de l'équipe
+- [ ] Le notebook est renommé avec les noms de l'équipe (`TPn_nom1_nom2_nom3.ipynb`)
+- [ ] **IMPORTANT:** Tout le code Python est directement visible dans le notebook (pas de dépendances sur des modules `.py` externes)
+- [ ] Le notebook est autoportant et s'exécute sans fichiers externes (sauf bibliothèques standard)
 - [ ] Toutes les cellules s'exécutent sans erreur (Kernel > Restart & Run All)
 - [ ] Les informations de l'équipe sont remplies
 - [ ] Les figures sont sauvegardées dans `figs/`

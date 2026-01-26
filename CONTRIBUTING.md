@@ -59,13 +59,19 @@ fig.savefig('../figs/mon_graphique.png', dpi=300, bbox_inches='tight')
 
 ### 4. Gestion des modules
 
-#### Dans `src/utils.py`
+**⚠️ IMPORTANT POUR LA REMISE :** Les modules dans `src/` sont utiles pendant le développement, mais **tout le code doit être copié dans le notebook final** pour la remise. Le notebook remis doit être autoportant et ne pas dépendre de fichiers `.py` externes.
+
+#### Pendant le développement
+
+Vous pouvez organiser votre code en modules pour faciliter le développement :
+
+##### Dans `src/utils.py`
 Placez les fonctions utilitaires génériques :
 - Lecture/écriture de fichiers
 - Conversions d'unités
 - Fonctions mathématiques réutilisables
 
-#### Dans `src/analysis.py`
+##### Dans `src/analysis.py`
 Placez les fonctions d'analyse spécifiques :
 - Calculs physiques
 - Analyse statistique
@@ -102,6 +108,37 @@ def calculer_energie(masse, vitesse):
     50.0
     """
     return 0.5 * masse * vitesse**2
+```
+
+#### Avant la remise finale
+
+**Étape cruciale :** Copiez toutes les fonctions utilisées depuis `src/` directement dans le notebook :
+
+1. Créez une cellule de code au début du notebook (après les imports standards)
+2. Copiez-y toutes les définitions de fonctions utilisées
+3. Supprimez les imports de modules personnalisés (`from utils import ...`, etc.)
+4. Testez que le notebook s'exécute complètement sans dépendances externes
+
+**Exemple de transition développement → remise :**
+
+**Pendant le développement :**
+```python
+import sys
+sys.path.append('../src')
+from utils import calculer_energie
+
+resultat = calculer_energie(1.0, 10.0)
+```
+
+**Pour la remise finale :**
+```python
+# Fonctions utilitaires (copiées depuis src/utils.py)
+def calculer_energie(masse, vitesse):
+    """Calcule l'énergie cinétique."""
+    return 0.5 * masse * vitesse**2
+
+# Utilisation
+resultat = calculer_energie(1.0, 10.0)
 ```
 
 ### 5. Workflow Git recommandé
@@ -245,9 +282,14 @@ Les résultats montrent que...
 
 ### 10. Checklist finale avant remise
 
+#### ⚠️ Vérifications critiques pour la remise
+
+- [ ] **CRITIQUE:** Tout le code Python est directement dans le notebook (pas de `from src import ...`)
+- [ ] **CRITIQUE:** Le notebook est autoportant et s'exécute sans modules `.py` externes
+- [ ] **CRITIQUE:** Un seul fichier `.ipynb` sera remis
 - [ ] Toutes les cellules s'exécutent dans l'ordre (Kernel > Restart & Run All)
 - [ ] Les informations de l'équipe sont remplies
-- [ ] Le fichier est renommé correctement
+- [ ] Le fichier est renommé correctement (`TPn_nom1_nom2_nom3.ipynb`)
 - [ ] Les figures sont dans `figs/`
 - [ ] Les résultats sont dans `results/`
 - [ ] Le code est propre et commenté
