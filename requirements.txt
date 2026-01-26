@@ -1,0 +1,31 @@
+# Dépendances Python pour PHY-3500
+# Physique Numérique - H26
+
+# Calcul scientifique
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualisation
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Jupyter
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipywidgets>=8.0.0
+
+# Gestion des notebooks
+nbstripout>=0.6.0
+nbdime>=3.2.0
+nbconvert>=7.0.0
+
+# Formatage du code
+black>=23.0.0
+isort>=5.12.0
+
+# Pre-commit hooks
+pre-commit>=3.3.0
+
+# Outils supplémentaires
+tqdm>=4.65.0
