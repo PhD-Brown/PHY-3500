@@ -8,17 +8,17 @@ import numpy as np
 def example_function(x):
     """
     Fonction d'exemple.
-    
+
     Parameters
     ----------
     x : array-like
         Données d'entrée
-        
+
     Returns
     -------
     array-like
         Résultat du traitement
-        
+
     TODO
     ----
     - Remplacez cette fonction par vos propres fonctions
