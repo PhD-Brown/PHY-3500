@@ -2,33 +2,42 @@
 
 Dépôt Git pour les travaux pratiques en équipe du cours de Physique Numérique - H26
 
+
 ## 📁 Structure du dépôt
 
 ```
 PHY-3500/
 ├── TP_1/
-│   ├── notebooks/
-│   │   ├── draft_m1.ipynb          # Brouillon membre 1
-│   │   ├── draft_m2.ipynb          # Brouillon membre 2
-│   │   ├── draft_m3.ipynb          # Brouillon membre 3
-│   │   └── TP1_nom1_nom2_nom3.ipynb  # Template à renommer et remettre
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── utils.py                # Fonctions utilitaires
-│   │   └── analysis.py             # Fonctions d'analyse
-│   ├── data/                       # Données du TP
-│   ├── figs/                       # Figures générées
-│   └── results/                    # Résultats sauvegardés
-├── TP_2/                           # Même structure
-├── TP_3/                           # Même structure
-├── TP_4/                           # Même structure
-├── TP_final/                       # Même structure
+│   ├── draft_m1.ipynb           # Brouillon membre 1
+│   ├── draft_m2.ipynb           # Brouillon membre 2
+│   ├── draft_m3.ipynb           # Brouillon membre 3
+│   └── TP1_nom1_nom2_nom3.ipynb # Notebook final à remettre
+├── TP_2/
+│   ├── draft_m1.ipynb
+│   ├── draft_m2.ipynb
+│   ├── draft_m3.ipynb
+│   └── TP2_nom1_nom2_nom3.ipynb
+├── TP_3/
+│   ├── draft_m1.ipynb
+│   ├── draft_m2.ipynb
+│   ├── draft_m3.ipynb
+│   └── TP3_nom1_nom2_nom3.ipynb
+├── TP_4/
+│   ├── draft_m1.ipynb
+│   ├── draft_m2.ipynb
+│   ├── draft_m3.ipynb
+│   └── TP4_nom1_nom2_nom3.ipynb
+├── TP_final/
+│   ├── draft_m1.ipynb
+│   ├── draft_m2.ipynb
+│   ├── draft_m3.ipynb
+│   └── TPfinal_nom1_nom2_nom3.ipynb
 ├── .gitignore
 ├── .gitattributes
 ├── .pre-commit-config.yaml
 ├── requirements.txt
-├── setup_venv.sh                   # Script Linux/Mac
-├── setup_venv.ps1                  # Script Windows
+├── setup_venv.sh                # Script Linux/Mac
+├── setup_venv.ps1               # Script Windows
 └── README.md
 ```
 
