@@ -34,3 +34,63 @@ dataDir = "./data/"
 anglesFile = "angles.txt"
 sinogramFile = "sinogram-password.txt"
 
+
+### FONCTIONS UTILITAIRES ###
+
+def get_proj_value_nearest(sinogram_row, t_pixel):
+    """
+    Retourne la valeur de projection par plus proche voisin.
+
+    Paramètres
+    ----------
+    sinogram_row : ndarray (1D)
+        Une projection (ligne du sinogramme).
+    t_pixel : float
+        Position fractionnaire sur le détecteur (pixels).
+
+    Retour
+    ------
+    float
+        Valeur d'atténuation au pixel le plus proche.
+    """
+    nbpix = len(sinogram_row)
+    idx = int(np.round(t_pixel))
+    if 0 <= idx < nbpix:
+        return sinogram_row[idx]
+    return 0.0
+
+
+def get_proj_value_linear(sinogram_row, t_pixel):
+    """
+    Retourne la valeur de projection par interpolation linéaire entre
+    les deux pixels adjacents du détecteur. (Q5)
+
+    Au lieu d'arrondir au plus proche voisin, on interpole :
+        valeur = (1 - frac) * sinogram_row[i0] + frac * sinogram_row[i1]
+    où i0 = floor(t_pixel), i1 = i0 + 1 et frac = t_pixel - i0.
+
+    Paramètres
+    ----------
+    sinogram_row : ndarray (1D)
+        Une projection (ligne du sinogramme).
+    t_pixel : float
+        Position fractionnaire sur le détecteur (pixels).
+
+    Retour
+    ------
+    float
+        Valeur d'atténuation interpolée linéairement.
+    """
+    nbpix = len(sinogram_row)
+    i0 = int(np.floor(t_pixel))
+    i1 = i0 + 1
+    frac = t_pixel - i0
+
+    if 0 <= i0 < nbpix and 0 <= i1 < nbpix:
+        return (1.0 - frac) * sinogram_row[i0] + frac * sinogram_row[i1]
+    elif 0 <= i0 < nbpix:
+        return sinogram_row[i0]
+    elif 0 <= i1 < nbpix:
+        return sinogram_row[i1]
+    return 0.0
+
