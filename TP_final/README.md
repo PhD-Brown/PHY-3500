@@ -418,14 +418,15 @@ L'interpolation linéaire dans l'espace latent entre une étoile froide et une �
 
 **Structure du rapport :**
 
-1. Résumé / Abstract (150–200 mots)
-2. Introduction — contexte + question de recherche
-3. Données et pipeline — LAMOST DR5 × Gaia DR3
-4. Méthodes — PCA · UMAP · Autoencodeur
-5. Résultats — *(cœur du rapport, 600–800 mots)*
-6. Discussion — limites et interprétation
-7. Conclusion — réponse à la question de recherche
-8. Références
+1. Résumé / Abstract (1 page max)
+2. Table des matière
+3. Introduction — contexte + question de recherche ( 1 page) = Ju
+4. Méthodes — PCA · UMAP · Tsne ( 5 pages) = Ju et Néri Pour PCA= montrer Svd donne lien pour le cours
+5. Données et pipeline — LAMOST DR5 × Gaia DR3 (1/2 page) = Alex
+6. Résultats — *(cœur 4 pages) = Alex, Néri, Ju
+7. Discussion — limites et interprétation (Comparaison des 3 méthodes) - 3 pages = Néri et Alex
+8. Conclusion — réponse à la question de recherche (répondre à la question short and sweet + comparaison la meilleur avec tes trucs) - 1 page
+9. Références
 
 ### Présentation orale — 30 avril / 1er mai 2026
 
